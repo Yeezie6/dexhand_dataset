@@ -1,0 +1,262 @@
+You are an expert research analyst in dexterous robotic manipulation, egocentric human-hand data, and robot learning benchmarks.
+
+Your task is to produce a comprehensive, decision-grade survey report on recent dexterous-hand datasets and dexterous-hand benchmarks, with a strong focus on datasets/benchmarks that are relevant to building a new egocentric dexterous-hand dataset project.
+
+The goal is NOT just to list papers. The goal is to help me deeply understand the landscape so I can lead a new dataset effort.
+
+Core scope:
+- Focus ONLY on dexterous hand / multi-finger robotic hand / anthropomorphic hand settings.
+- Prioritize works from roughly 2022 to present, with special emphasis on recent work from 2024 to present.
+- Include both:
+  1) datasets
+  2) benchmarks / evaluation suites
+- Cover both human-hand and robot-hand data if they are directly relevant to dexterous manipulation learning, transfer, retargeting, policy learning, grasp generation, or manipulation evaluation.
+- Explicitly distinguish:
+  - 6DoF grasp / wrist-pose style datasets
+  - true high-DoF dexterous hand datasets
+  - static grasp datasets vs sequential manipulation datasets
+  - synthetic vs real-world vs mixed datasets
+  - egocentric vs exocentric capture
+  - human data vs robot data
+  - grasp-generation benchmarks vs full manipulation-control benchmarks
+
+Very important filtering rules:
+- Do NOT mix in simple parallel-jaw gripper datasets unless they provide an essential benchmark reference point.
+- Do NOT include generic manipulation datasets unless they contain dexterous-hand-specific data or dexterous-hand-specific benchmark protocols.
+- Be strict about whether a dataset is genuinely about dexterous hands, rather than just hand-object pose estimation or generic HOI.
+- For each item, explicitly say whether it is truly relevant for dexterous robot learning, only partially relevant, or mostly irrelevant for my purpose.
+
+Research questions to answer:
+1. What dexterous-hand datasets currently exist?
+2. Which of them are actually high-DoF, and which are effectively just 6DoF pose/grasp datasets?
+3. What task families do they cover?
+   - grasping
+   - in-hand manipulation
+   - pick-and-place
+   - regrasp
+   - tool use
+   - articulated object manipulation
+   - long-horizon manipulation
+   - bimanual / dual-hand manipulation
+   - handover
+   - teleoperation / demonstration collection
+4. What sensing modalities do they provide?
+   - RGB
+   - RGB-D
+   - stereo
+   - point cloud
+   - tactile
+   - force/torque
+   - proprioception
+   - joint states
+   - action trajectories
+   - language
+   - object mesh / part labels / affordance labels
+5. What embodiments / hands do they use?
+   - Allegro
+   - Shadow Hand
+   - Leap Hand
+   - Inspire / DH / other dexterous hands
+   - human hand skeletal data
+   - cross-embodiment mappings
+6. What are the main benchmark settings used in this area?
+   - offline imitation
+   - policy learning
+   - RL
+   - sim-to-real
+   - grasp synthesis
+   - trajectory prediction
+   - hand pose retargeting
+   - manipulation success rate
+   - long-horizon evaluation
+   - cross-object generalization
+   - cross-task generalization
+   - cross-embodiment generalization
+7. What are the major gaps in existing datasets and benchmarks?
+8. Based on this landscape, what should a strong new egocentric dexterous-hand dataset include?
+
+Output requirements:
+Produce a polished research report in Markdown with the following structure.
+
+1. Executive Summary
+- 1-2 pages.
+- Summarize the landscape.
+- Summarize what is missing.
+- Summarize the strongest design recommendations for a new dataset.
+
+2. Taxonomy of the Field
+Build a clear taxonomy table that organizes prior work by:
+- dataset vs benchmark
+- human vs robot
+- egocentric vs exocentric
+- grasp-only vs sequential manipulation
+- static vs temporal
+- simulation vs real vs mixed
+- 6DoF vs high-DoF
+- single-hand vs bimanual
+- perception-only vs action-labeled vs full policy-learning ready
+
+3. Comprehensive Dataset Table
+Create a detailed comparison table with one row per dataset.
+Required columns:
+- Name
+- Year
+- Paper / project URL
+- Code URL
+- Data URL
+- Dataset type
+- Human / robot / both
+- Egocentric / exocentric / both
+- Real / sim / mixed
+- Tasks covered
+- Number of tasks
+- Number of scenes / environments
+- Number of objects / categories
+- Number of demonstrations / sequences / episodes
+- Total duration / scale
+- Modalities
+- Labels / annotations
+- Action availability
+- Hand embodiment
+- Number of finger joints / effective DoF
+- Whether it supports high-DoF dexterous learning
+- Whether it supports sequential manipulation learning
+- Whether it supports language-conditioned learning
+- Benchmark included? yes/no
+- Main strengths
+- Main weaknesses
+- Relevance to building a new egocentric dexhand dataset (High / Medium / Low)
+
+4. Comprehensive Benchmark Table
+Create a separate table for benchmarks / evaluation suites.
+Required columns:
+- Name
+- Year
+- Scope
+- Tasks
+- Real/sim
+- Embodiments
+- Input modalities
+- Output / control space
+- Metrics
+- Whether high-DoF hands are supported
+- Whether egocentric input is supported
+- Whether long-horizon evaluation exists
+- Whether cross-embodiment evaluation exists
+- Main limitations
+- Relevance to my project
+
+5. Deep Analysis by Theme
+Provide detailed analysis under the following themes:
+- Egocentric dexterous manipulation data
+- Human-to-robot transfer datasets
+- High-DoF dexterous hand datasets
+- Grasp-pose datasets vs full manipulation trajectory datasets
+- Vision-only vs vision-tactile datasets
+- Simulation-heavy pipelines vs real-data pipelines
+- Bimanual dexterous manipulation
+- Benchmarks for dynamic interaction / handover / articulated objects / tool use
+For each theme:
+- summarize representative works
+- explain what they contribute
+- explain where they fall short
+- explain why that matters for a new dataset project
+
+6. Critical Gap Analysis
+This section is extremely important.
+Identify the deepest open gaps, such as:
+- lack of high-DoF action labels
+- lack of egocentric real-world dexterous manipulation data
+- lack of long-horizon task structure
+- lack of diverse scenes / objects / task semantics
+- lack of consistent benchmark protocols
+- weak cross-embodiment evaluation
+- weak contact / tactile / force supervision
+- insufficient language grounding
+- lack of standardized train/val/test splits for generalization
+- mismatch between human-hand signals and robot-hand control requirements
+For each gap:
+- explain why it matters
+- explain which existing works partially address it
+- explain what is still missing
+
+7. Design Recommendations for a New Dataset
+Pretend you are advising the PI leading a new egocentric dexterous-hand dataset project.
+Give concrete recommendations for:
+- target problem statement
+- data collection setup
+- camera placement
+- egocentric capture design
+- tasks to include
+- scene diversity
+- object taxonomy
+- grasp taxonomy
+- manipulation taxonomy
+- whether to include robot data, human data, or both
+- whether to include retargeted actions
+- annotation design
+- benchmark protocol design
+- train/val/test split strategy
+- cross-object / cross-scene / cross-task / cross-embodiment splits
+- baseline methods to include
+- metrics to report
+- what would make the dataset genuinely novel and publishable
+
+8. Ranked Shortlist
+Give me:
+- Top 10 most relevant existing datasets
+- Top 10 most relevant existing benchmarks
+- Top 5 most important papers to read first
+For each item, include a short explanation of why it matters.
+
+9. Final Recommendation
+End with a clear verdict:
+- If I want to lead a new egocentric dexterous-hand dataset, what exact positioning would be most promising?
+- What should I avoid because it is already saturated?
+- What combination of “scene + task + annotation + benchmark” would most likely create a strong contribution?
+
+Research methodology requirements:
+- Search broadly and systematically.
+- Use official project pages, papers, arXiv, conference proceedings, code repositories, and dataset pages.
+- Verify factual details before including them.
+- If a detail cannot be verified, mark it as “unclear” rather than guessing.
+- Prefer precise numbers over vague descriptions.
+- Include citations/links inline.
+- Be careful not to conflate “hand pose dataset” with “dexterous manipulation dataset”.
+- Be careful not to conflate “grasp synthesis benchmark” with “manipulation policy benchmark”.
+
+Quality bar:
+- The report should be comprehensive enough that I can use it to design a new dataset project.
+- It should read like a serious internal research memo, not a casual summary.
+- It should be critical, comparative, and decision-oriented.
+- It should explicitly highlight the difference between low-DoF / 6DoF style data and true high-DoF dexterous hand data.
+
+Optional but strongly preferred:
+- Also generate:
+  1) a CSV file for all datasets
+  2) a CSV file for all benchmarks
+  3) a final “recommended dataset design blueprint” as a separate Markdown file
+  4) a reading list sorted by priority
+
+Before writing the final report:
+- First build a candidate list of papers/datasets/benchmarks.
+- Then deduplicate near-duplicates.
+- Then classify them into the taxonomy.
+- Then write the final report.
+
+If the literature is broad, prioritize works that are most useful for: egocentric dexterous manipulation, high-DoF hands, sequential action learning, benchmark design, and human-to-robot transfer.
+
+My personal project goal:
+I want to lead a new egocentric dexterous-hand dataset project.
+I care especially about:
+- high-DoF dexterous hands rather than only 6DoF grasp pose
+- dataset usefulness for future VLA / policy learning
+- scene diversity and task diversity
+- whether the dataset can support both grasping and sequential manipulation
+- whether the benchmark can reveal cross-object / cross-scene / cross-task / cross-embodiment generalization
+
+So in the final recommendation, prioritize insights that help me decide:
+- what scenes to collect
+- what tasks to include
+- what annotations matter most
+- how to make the dataset clearly differentiated from existing work

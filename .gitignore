@@ -1,0 +1,34 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Dataset media and large files
+media/
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.png
+*.jpg
+*.jpeg
+
+# NumPy / checkpoints
+*.npy
+*.npz
+*.h5
+*.pth
+*.ckpt
+
+# Archives
+*.zip
+*.tar.gz
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
